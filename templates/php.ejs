@@ -1,0 +1,19 @@
+<?php
+
+<% if (locals.comment) { -%>
+    <%- include('php/comment', comment) %>
+<% } -%>
+
+<% (locals.declares || []).forEach(function (declare) { -%>
+    <%- include('php/declare', declare) -%>
+<% }) -%>
+
+<% if (locals.namespace) { -%>
+    <%- include('php/namespace', {namespace}) -%>
+<% } -%>
+
+<% (locals.imports || []).forEach(function (imp) { -%>
+    <%- include('php/import', imp) -%>
+<% }) -%>
+
+<%- body -%>
